@@ -36,17 +36,11 @@ Each writeup includes:
 7. Lessons learned
 8. Mitigation advice
 
-## Admin Panel
-
-Use [admin/index.html](admin/index.html) to draft writeups through a local admin panel. It stores drafts in your browser, generates a polished `README.md`, supports screenshot references, and keeps the report tone consistent.
-
 ## Repository Structure
 
 ```text
 ctf-writeups/
 ├── README.md
-├── admin/
-│   └── index.html
 ├── templates/
 │   └── writeup-template.md
 ├── tryhackme/
