@@ -1,1 +1,58 @@
 admin/
+
+# Private CTF notes and secrets
+notes-private.md
+private-notes.md
+secrets.*
+*.secret
+*.key
+*.pem
+*.ovpn
+*.conf
+*flag*
+*FLAG*
+
+# Raw loot and extracted target files
+loot/
+evidence/
+dump/
+dumps/
+extracted/
+wordlists/
+hashes/
+creds/
+credentials/
+
+# Scanner and tool output
+*.gnmap
+*.xml
+*.nessus
+*.pcap
+*.pcapng
+
+# Archives and large downloaded files
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+
+# Binaries and compiled artifacts
+*.exe
+*.dll
+*.so
+*.bin
+*.elf
+*.o
+*.class
+__pycache__/
+*.pyc
+
+# Editor, OS, and dependency noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+node_modules/
