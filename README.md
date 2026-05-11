@@ -8,13 +8,14 @@ Each writeup focuses on methodology, enumeration, exploitation flow, privilege e
 
 | Platform | Category | Writeups |
 |---|---|---|
-| TryHackMe | Beginner to Intermediate | [Basic Pentesting](tryhackme/basic-pentesting/README.md) |
+| TryHackMe | Beginner to Intermediate | [Basic Pentesting](tryhackme/basic-pentesting/README.md), [RootMe](tryhackme/rootme/README.md) |
 | Hack The Box | Intermediate | Coming soon |
 | picoCTF | Web, Crypto, Forensics | Coming soon |
 
 ## Featured Writeups
 
 - [Basic Pentesting](tryhackme/basic-pentesting/README.md) - TryHackMe room covering enumeration, SMB misconfiguration, SSH brute forcing, and Linux privilege escalation.
+- [RootMe](tryhackme/rootme/README.md) - TryHackMe room covering file upload exploitation, reverse shell access, and SUID-based privilege escalation.
 
 ## Skills Demonstrated
 
@@ -48,7 +49,9 @@ ctf-writeups/
 ├── templates/
 │   └── writeup-template.md
 ├── tryhackme/
-│   └── basic-pentesting/
+│   ├── basic-pentesting/
+│   │   └── README.md
+│   └── rootme/
 │       └── README.md
 ├── hackthebox/
 │   └── machine-name/
