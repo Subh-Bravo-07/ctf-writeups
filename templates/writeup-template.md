@@ -1,161 +1,89 @@
-# Platform: Room / Machine Name
+# Platform: Challenge Name
 
 ## Overview
 
-**Platform:** TryHackMe / Hack The Box / picoCTF  
-**Room/Machine:** Name  
-**Difficulty:** Easy / Medium / Hard  
-**Category:** Web / Linux / Windows / AD / Forensics / Crypto  
-**Date Completed:** DD Month YYYY  
+**Platform:** TryHackMe / Hack The Box / picoCTF / Other  
+**Room/Machine/Challenge:** Name  
+**Difficulty:** Easy / Medium / Hard / Insane  
+**Category:** Web Exploitation / Cryptography / Forensics / Reverse Engineering / Privilege Escalation  
+**Date Completed:** Month DD, YYYY  
+**File/URL:** target, URL, or artifact  
+**Repo Path:** `ctfs/platform-folder/folder-slug/README.md`
 
-## Objective
+## Report Content
 
-Briefly explain what the challenge required.
+### Objective
 
-Example:
+Briefly describe the challenge goal and the expected proof, such as recovering a flag, gaining shell access, decrypting data, or identifying evidence.
 
-The goal was to enumerate exposed services, identify a vulnerable web application, gain initial access, and escalate privileges to root.
+### Lab Setup
 
-## Lab Setup
+- Environment: Kali Linux
+- Target/Artifact: CTF-provided asset
+- Network: VPN, browser lab, remote service, or local-only
 
-- Attacker Machine: Kali Linux
-- Target: CTF-provided machine
-- Network: VPN / browser-based lab
+### Challenge Overview
 
-## Reconnaissance
+Summarize the initial review. Mention the target surface, file type, service, binary, ciphertext, disk image, or source code that drove the investigation.
 
-### Port Scanning
+### Analysis Process
 
-Command used:
+Document the main solve path in chronological order. Use short paragraphs or a numbered list, and keep commands or output in fenced code blocks.
 
 ```bash
-nmap -sC -sV -oN nmap.txt <target-ip>
+# Example command sequence
+file artifact.bin
+strings artifact.bin
 ```
 
-Key findings:
+### Commands And Evidence
+
+```bash
+# Add the exact commands used to reproduce the solve
+```
+
+### Findings
+
+- Key observation or vulnerability identified
+- Evidence that confirmed the correct path
+- Flag or proof recovered
+
+### Flag Recovery
 
 ```text
-22/tcp open  ssh
-80/tcp open  http
+[redacted]
 ```
 
-Summary:
+### Conclusion
 
-The scan revealed SSH and HTTP services. Since port 80 was open, I started web enumeration.
-
-### Web Enumeration
-
-Tools used:
-
-```bash
-whatweb http://<target-ip>
-gobuster dir -u http://<target-ip> -w /usr/share/wordlists/dirb/common.txt
-```
-
-Interesting findings:
-
-- `/admin`
-- `/uploads`
-- outdated CMS version
-- login page exposed
-
-## Exploitation
-
-Explain the vulnerability clearly.
-
-Example:
-
-The web application allowed file uploads without validating the file extension properly. I uploaded a PHP reverse shell by bypassing the extension filter.
-
-Command or payload:
-
-```bash
-nc -lvnp 4444
-```
-
-Result:
-
-Initial shell was obtained as the `www-data` user.
-
-## Initial Access
-
-```bash
-whoami
-id
-hostname
-```
-
-Finding:
-
-```text
-www-data
-```
-
-At this stage, I had a low-privileged shell and began local enumeration.
-
-## Privilege Escalation
-
-Enumeration commands:
-
-```bash
-sudo -l
-find / -perm -4000 2>/dev/null
-cat /etc/crontab
-```
-
-Key finding:
-
-The user had permission to run a specific binary as root without a password.
-
-Exploitation:
-
-```bash
-sudo /path/to/binary
-```
-
-Result:
-
-Root access was obtained.
-
-## Flags
-
-Avoid exposing active platform flags if the platform does not allow it.
-
-```text
-user.txt: [redacted]
-root.txt: [redacted]
-```
+The challenge was completed and the core evidence, commands, and takeaways were documented for reproducibility.
 
 ## Tools Used
 
 | Tool | Purpose |
 |---|---|
-| Nmap | Port scanning and service detection |
-| Gobuster | Directory brute forcing |
-| Burp Suite | Web request analysis |
-| Netcat | Reverse shell listener |
-| LinPEAS | Linux privilege escalation enumeration |
+| tool-name | Explain what it proved or extracted |
+
+## Screenshots
+
+Add screenshot files to the `screenshots/` folder, then reference them here.
+
+```md
+![Short alt text](screenshots/example.png)
+```
 
 ## Lessons Learned
 
-- Always enumerate web directories after finding HTTP services.
-- File upload validation should check content, extension, and MIME type.
-- `sudo -l` is one of the first checks after getting shell access.
-- Misconfigured sudo permissions can lead to full system compromise.
+- Record the exact evidence that proved each step.
+- Keep commands reproducible and separate from interpretation.
+- Match report sections to the challenge type instead of forcing machine-style steps.
 
 ## Mitigation Advice
 
-For defenders, the issue could be prevented by:
-
-- Restricting dangerous sudo permissions
-- Validating uploaded files server-side
-- Disabling execution inside upload directories
-- Keeping CMS/software versions updated
-- Monitoring suspicious reverse shell behavior
-- Reviewing exposed admin panels
+- Remove secrets from public artifacts and challenge assets.
+- Apply least privilege and avoid unnecessary exposure.
+- Validate releases with automated checks before publishing.
 
 ## References
 
-- https://gtfobins.github.io/
-- https://book.hacktricks.xyz/
-- https://tryhackme.com/
+- https://ctf101.org/

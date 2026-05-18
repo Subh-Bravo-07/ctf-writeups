@@ -10,15 +10,18 @@ Each writeup focuses on methodology, enumeration, exploitation flow, privilege e
 |---|---|---|
 | TryHackMe | Beginner to Intermediate | [Basic Pentesting](ctfs/tryhackme/basic-pentesting/README.md), [RootMe](ctfs/tryhackme/rootme/README.md) |
 | Hack The Box | Intermediate | Coming soon |
-| picoCTF | Crypto, Forensics | [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md), [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md), [St3g0](ctfs/picoctf/st3g0/README.md) |
+| picoCTF | Cryptography, Forensics | [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md), [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md), [sleuthkit-apprentice](ctfs/picoctf/sleuthkit-apprentice/README.md), [St3g0](ctfs/picoctf/st3g0/README.md) |
+| Other | Mixed | Coming soon |
 
 ## Featured Writeups
 
-- [Basic Pentesting](ctfs/tryhackme/basic-pentesting/README.md) - TryHackMe room covering enumeration, SMB misconfiguration, SSH brute forcing, and Linux privilege escalation.
-- [RootMe](ctfs/tryhackme/rootme/README.md) - TryHackMe room covering file upload exploitation, reverse shell access, and SUID-based privilege escalation.
-- [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md) - picoCTF cryptography challenge covering RSA oracle behavior, modulus recovery, and blinding.
-- [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md) - picoCTF forensics challenge using Sleuth Kit to inspect a disk image partition table.
-- [St3g0](ctfs/picoctf/st3g0/README.md) - picoCTF forensics challenge focused on image metadata, embedded content, and steganography.
+- [Basic Pentesting](ctfs/tryhackme/basic-pentesting/README.md) - TryHackMe writeup for Basic Pentesting.
+- [RootMe](ctfs/tryhackme/rootme/README.md) - TryHackMe writeup for RootMe.
+- [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md) - Exploit the bank's encryption oracle to recover the encrypted password, then use the decrypted password to decrypt the intercepted ciphertext message.
+- [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md) - Download the disk image, identify the size of the Linux partition using mmls, then submit the answer to the remote checker service to obtain the flag.
+- [sleuthkit-apprentice](ctfs/picoctf/sleuthkit-apprentice/README.md) - Recover the hidden flag from the provided forensic disk image (disk.flag.img).
+- [St3g0](ctfs/picoctf/st3g0/README.md) - Download the provided image file and identify the hidden flag concealed within it.
+
 
 ## Skills Demonstrated
 
@@ -58,13 +61,12 @@ ctf-writeups/
 │   │   └── rootme/
 │   │       └── README.md
 │   ├── hackthebox/
-│   │   └── machine-name/
-│   │       ├── README.md
-│   │       └── screenshots/
 │   ├── picoctf/
 │   │   ├── rsa-oracle/
 │   │   │   └── README.md
 │   │   ├── sleuthkit-intro/
+│   │   │   └── README.md
+│   │   ├── sleuthkit-apprentice/
 │   │   │   └── README.md
 │   │   └── st3g0/
 │   │       └── README.md
@@ -72,6 +74,7 @@ ctf-writeups/
 └── assets/
     └── banner.png
 ```
+
 
 ## Writing Style
 

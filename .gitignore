@@ -1,4 +1,4 @@
-admin/
+admin/*
 
 # Private CTF notes and secrets
 notes-private.md
