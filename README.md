@@ -10,12 +10,15 @@ Each writeup focuses on methodology, enumeration, exploitation flow, privilege e
 |---|---|---|
 | TryHackMe | Beginner to Intermediate | [Basic Pentesting](ctfs/tryhackme/basic-pentesting/README.md), [RootMe](ctfs/tryhackme/rootme/README.md) |
 | Hack The Box | Intermediate | Coming soon |
-| picoCTF | Web, Crypto, Forensics | Coming soon |
+| picoCTF | Crypto, Forensics | [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md), [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md), [St3g0](ctfs/picoctf/st3g0/README.md) |
 
 ## Featured Writeups
 
 - [Basic Pentesting](ctfs/tryhackme/basic-pentesting/README.md) - TryHackMe room covering enumeration, SMB misconfiguration, SSH brute forcing, and Linux privilege escalation.
 - [RootMe](ctfs/tryhackme/rootme/README.md) - TryHackMe room covering file upload exploitation, reverse shell access, and SUID-based privilege escalation.
+- [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md) - picoCTF cryptography challenge covering RSA oracle behavior, modulus recovery, and blinding.
+- [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md) - picoCTF forensics challenge using Sleuth Kit to inspect a disk image partition table.
+- [St3g0](ctfs/picoctf/st3g0/README.md) - picoCTF forensics challenge focused on image metadata, embedded content, and steganography.
 
 ## Skills Demonstrated
 
@@ -59,7 +62,11 @@ ctf-writeups/
 │   │       ├── README.md
 │   │       └── screenshots/
 │   ├── picoctf/
-│   │   └── challenge-name/
+│   │   ├── rsa-oracle/
+│   │   │   └── README.md
+│   │   ├── sleuthkit-intro/
+│   │   │   └── README.md
+│   │   └── st3g0/
 │   │       └── README.md
 │   └── others/
 └── assets/
