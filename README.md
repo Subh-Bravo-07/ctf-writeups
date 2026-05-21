@@ -2,7 +2,7 @@
 
 A curated CTF writeup collection with a public dashboard for tracking platforms, categories, techniques, and solve history.
 
-Dashboard: Coming soon
+Dashboard: [Open CTF Dashboard](https://subh-bravo-07.github.io/ctf-writeups/dashboard/)
 
 Each writeup focuses on methodology, enumeration, exploitation flow, privilege escalation, and defensive takeaways. Public dashboard data is sanitized and derived from the writeups in `ctfs/`.
 
