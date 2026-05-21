@@ -17,7 +17,7 @@ Each writeup focuses on methodology, enumeration, exploitation flow, privilege e
 
 ## Public Dashboard
 
-The static dashboard lives in [`dashboard/`](dashboard/) and provides a read-only portfolio view of the public writeups.
+The static dashboard lives in [`CTF DASHBOARD/`](<CTF DASHBOARD/>) and provides a read-only portfolio view of the public writeups.
 
 It includes:
 
@@ -64,7 +64,7 @@ Each writeup includes:
 
 ## Dashboard Data
 
-Dashboard records live in [`dashboard/data/writeups.json`](dashboard/data/writeups.json). This file is the sanitized public index used by the frontend.
+Dashboard records live in [`CTF DASHBOARD/data/writeups.json`](<CTF DASHBOARD/data/writeups.json>). This file is the sanitized public index used by the frontend.
 
 Each record can include title, slug, platform, categories, difficulty, completion date, status, summary, objective, analysis path, findings, lessons learned, mitigation advice, tools, skills, and a link back to the Markdown writeup.
 
@@ -83,7 +83,7 @@ This repository is public-facing and should contain only sanitized educational m
 
 ## Local Dashboard Preview
 
-Because the dashboard loads `dashboard/data/writeups.json` with `fetch`, run it from a local static server instead of opening `index.html` directly.
+Because the dashboard loads `CTF DASHBOARD/data/writeups.json` with `fetch`, run it from a local static server instead of opening `index.html` directly.
 
 ```bash
 python -m http.server 8000
@@ -92,17 +92,17 @@ python -m http.server 8000
 Then open:
 
 ```text
-http://localhost:8000/dashboard/
+http://localhost:8000/CTF%20DASHBOARD/
 ```
 
-For GitHub Pages, Netlify, or Vercel, publish the repository root so dashboard links can reach both `dashboard/` and `ctfs/`.
+For GitHub Pages, Netlify, or Vercel, publish the repository root so dashboard links can reach both `CTF DASHBOARD/` and `ctfs/`.
 
 ## Repository Structure
 
 ```text
 ctf-writeups/
 ├── README.md
-├── dashboard/
+├── CTF DASHBOARD/
 │   ├── index.html
 │   ├── data/
 │   │   └── writeups.json
