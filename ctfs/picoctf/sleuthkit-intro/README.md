@@ -7,7 +7,7 @@
 **Difficulty:** Medium  
 **Category:** Forensics  
 **Date Completed:** May 16, 2026  
-**File/URL:** disk.img.gz, nc saturn.picoctf.net 59907  
+**File/URL:** disk.img.gz, remote checker service  
 **Repo Path:** `ctfs/picoctf/sleuthkit-intro/README.md`
 
 ## Report Content
@@ -20,7 +20,7 @@ Download the disk image, identify the size of the Linux partition using mmls, th
 
 - Environment: Kali Linux
 - Artifact: disk.img.gz
-- Remote Service: nc saturn.picoctf.net 59907
+- Remote Service: remote checker service
 
 ### Evidence Overview
 

