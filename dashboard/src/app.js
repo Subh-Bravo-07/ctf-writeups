@@ -59,7 +59,7 @@ const optionMarkup = (label, value = label) => `<option value="${value}">${label
 const latestCompleted = (items) => items
   .map((item, index) => ({ item, index }))
   .filter(({ item }) => item.dateCompleted)
-  .sort((a, b) => b.item.dateCompleted.localeCompare(a.item.dateCompleted) || b.index - a.index)[0]?.item;
+  .sort((a, b) => b.item.dateCompleted.localeCompare(a.item.dateCompleted) || a.index - b.index)[0]?.item;
 
 const populateFilters = () => {
   const categories = [...new Set([...CATEGORIES, ...writeups.flatMap((item) => item.categories || [item.category])])];

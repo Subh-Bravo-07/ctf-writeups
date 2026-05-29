@@ -60,6 +60,26 @@
     "sensitive": false
   },
   {
+    "title": "Packets Primer",
+    "slug": "packets-primer",
+    "platform": "picoCTF",
+    "categories": ["Forensics", "Packet Analysis"],
+    "category": "Forensics",
+    "difficulty": "Medium",
+    "dateCompleted": "2026-05-16",
+    "status": "Published",
+    "summary": "A packet capture was searched for a plaintext picoCTF flag pattern using a binary-safe helper alias.",
+    "objective": "Download the provided packet capture and analyze the captured traffic to recover the hidden picoCTF flag.",
+    "pathSummary": "The capture was preserved as the original artifact and searched directly with the local picog helper. The binary-safe grep found the standard picoCTF flag pattern in the packet data, and Wireshark or tshark can verify the matching packet stream.",
+    "findings": ["The artifact was a packet capture with readable payload data.", "The flag appeared directly in plaintext inside the capture bytes.", "picog recovered the flag by matching the standard picoCTF flag format."],
+    "lessons": ["Start packet challenges with quick plaintext and flag-format checks.", "Use binary-safe search when scanning captures directly.", "Verify shortcut results with packet or stream context."],
+    "mitigation": "Avoid transmitting secrets in plaintext protocols, encrypt sensitive data in transit, and review packet captures before public release.",
+    "tools": ["picog", "grep", "strings", "Wireshark", "tshark"],
+    "skills": ["Packet capture analysis", "Binary-safe searching", "Plaintext payload inspection"],
+    "writeupPath": "ctfs/picoctf/packets-primer/README.md",
+    "sensitive": false
+  },
+  {
     "title": "sleuthkit intro",
     "slug": "sleuthkit-intro",
     "platform": "picoCTF",
@@ -117,26 +137,6 @@
     "tools": ["ExifTool", "binwalk", "zsteg"],
     "skills": ["Metadata inspection", "Embedded data detection", "LSB steganography"],
     "writeupPath": "ctfs/picoctf/st3g0/README.md",
-    "sensitive": false
-  },
-  {
-    "title": "Packets Primer",
-    "slug": "packets-primer",
-    "platform": "picoCTF",
-    "categories": ["Forensics", "Packet Analysis"],
-    "category": "Forensics",
-    "difficulty": "Medium",
-    "dateCompleted": "2026-05-16",
-    "status": "Published",
-    "summary": "A packet capture was searched for a plaintext picoCTF flag pattern using a binary-safe helper alias.",
-    "objective": "Download the provided packet capture and analyze the captured traffic to recover the hidden picoCTF flag.",
-    "pathSummary": "The capture was preserved as the original artifact and searched directly with the local picog helper. The binary-safe grep found the standard picoCTF flag pattern in the packet data, and Wireshark or tshark can verify the matching packet stream.",
-    "findings": ["The artifact was a packet capture with readable payload data.", "The flag appeared directly in plaintext inside the capture bytes.", "picog recovered the flag by matching the standard picoCTF flag format."],
-    "lessons": ["Start packet challenges with quick plaintext and flag-format checks.", "Use binary-safe search when scanning captures directly.", "Verify shortcut results with packet or stream context."],
-    "mitigation": "Avoid transmitting secrets in plaintext protocols, encrypt sensitive data in transit, and review packet captures before public release.",
-    "tools": ["picog", "grep", "strings", "Wireshark", "tshark"],
-    "skills": ["Packet capture analysis", "Binary-safe searching", "Plaintext payload inspection"],
-    "writeupPath": "ctfs/picoctf/packets-primer/README.md",
     "sensitive": false
   },
   {
