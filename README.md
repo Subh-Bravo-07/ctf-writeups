@@ -12,7 +12,7 @@ Each writeup focuses on methodology, enumeration, exploitation flow, privilege e
 |---|---|---|
 | TryHackMe | Beginner to Intermediate | [Basic Pentesting](ctfs/tryhackme/basic-pentesting/README.md), [RootMe](ctfs/tryhackme/rootme/README.md) |
 | Hack The Box | Intermediate | Coming soon |
-| picoCTF | Cryptography, Forensics | [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md), [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md), [sleuthkit-apprentice](ctfs/picoctf/sleuthkit-apprentice/README.md), [St3g0](ctfs/picoctf/st3g0/README.md) |
+| picoCTF | Cryptography, Forensics | [rsa_oracle](ctfs/picoctf/rsa-oracle/README.md), [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md), [sleuthkit-apprentice](ctfs/picoctf/sleuthkit-apprentice/README.md), [St3g0](ctfs/picoctf/st3g0/README.md), [Packets Primer](ctfs/picoctf/packets-primer/README.md) |
 | Other | Mixed | Coming soon |
 
 ## Public Dashboard
@@ -37,6 +37,7 @@ The dashboard uses plain HTML, CSS, and JavaScript. No backend, login system, or
 - [sleuthkit intro](ctfs/picoctf/sleuthkit-intro/README.md) - Download the disk image, identify the size of the Linux partition using mmls, then submit the answer to the remote checker service to obtain the flag.
 - [sleuthkit-apprentice](ctfs/picoctf/sleuthkit-apprentice/README.md) - Recover the hidden flag from the provided forensic disk image.
 - [St3g0](ctfs/picoctf/st3g0/README.md) - Download the provided image file and identify the hidden flag concealed within it.
+- [Packets Primer](ctfs/picoctf/packets-primer/README.md) - Analyze a packet capture and recover a plaintext picoCTF flag using packet-search techniques.
 
 ## Skills Demonstrated
 
@@ -120,6 +121,8 @@ ctf-writeups/
 │   ├── hackthebox/
 │   ├── picoctf/
 │   │   ├── rsa-oracle/
+│   │   │   └── README.md
+│   │   ├── packets-primer/
 │   │   │   └── README.md
 │   │   ├── sleuthkit-intro/
 │   │   │   └── README.md
