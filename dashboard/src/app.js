@@ -274,7 +274,7 @@ const bindEvents = () => {
 };
 
 const init = async () => {
-  const response = await fetch("data/writeups.json");
+  const response = await fetch(`data/writeups.json?v=${Date.now()}`, { cache: "no-store" });
   writeups = await response.json();
   populateFilters();
   renderStats();
