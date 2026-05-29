@@ -5,6 +5,7 @@ const CATEGORIES = [
   "Forensics",
   "Privilege Escalation",
   "Network Security",
+  "Packet Analysis",
   "Active Directory",
   "Reverse Engineering",
   "Binary Exploitation",
@@ -55,6 +56,11 @@ const publicPath = (path) => `../${path}`;
 
 const optionMarkup = (label, value = label) => `<option value="${value}">${label}</option>`;
 
+const latestCompleted = (items) => items
+  .map((item, index) => ({ item, index }))
+  .filter(({ item }) => item.dateCompleted)
+  .sort((a, b) => b.item.dateCompleted.localeCompare(a.item.dateCompleted) || b.index - a.index)[0]?.item;
+
 const populateFilters = () => {
   const categories = [...new Set([...CATEGORIES, ...writeups.flatMap((item) => item.categories || [item.category])])];
   $("#platformFilter").innerHTML = optionMarkup("All platforms", "All") + PLATFORMS.map((item) => optionMarkup(item)).join("");
@@ -67,13 +73,13 @@ const renderStats = () => {
   const published = publishedOnly();
   const platformCount = new Set(published.map((item) => item.platform)).size;
   const categoryCounts = countBy(published, (item) => item.categories || item.category);
-  const dated = published.filter((item) => item.dateCompleted).sort((a, b) => b.dateCompleted.localeCompare(a.dateCompleted));
+  const latest = latestCompleted(published);
   const strongest = [...categoryCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0];
 
   $("#statTotal").textContent = published.length;
   $("#statPlatforms").textContent = platformCount;
   $("#statCategories").textContent = categoryCounts.size;
-  $("#statLatest").textContent = dated[0] ? `${dated[0].title} (${formatDate(dated[0].dateCompleted)})` : "Not dated";
+  $("#statLatest").textContent = latest ? `${latest.title} (${formatDate(latest.dateCompleted)})` : "Not dated";
   $("#statStrongest").textContent = strongest ? `${strongest[0]} (${strongest[1]})` : "None yet";
   $("#lastUpdated").textContent = `Dataset: ${writeups.length} records`;
 };
